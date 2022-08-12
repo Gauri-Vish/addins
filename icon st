@@ -10,3 +10,34 @@ I'm importing the font-awesome icons as a stylesheet!
 
 st.write(css_example, unsafe_allow_html=True)
 
+
+#html file
+
+<!-- awesome.html -->
+<script src="https://kit.fontawesome.com/2c74303849.js" crossorigin="anonymous"></script>
+<p> I'm in an HTML component containing fontawesome icons from a kit! I don't inherit CSS automatically!</p>
+<p>
+<i class="fa-solid fa-pen"></i>
+<i class="fa-solid fa-eyes"></i>
+<i class="fa-solid fa-folder-arrow-down"></i>
+<i class="fa-solid fa-trash-can"></i>
+</p>
+
+#add above in streamlit
+import streamlit as st
+
+
+def load_text(file_path):
+    """A convenience function for reading in the files used for the site's text"""
+    with open(file_path) as in_file:
+        return in_file.read()
+                                                                                
+                                                                                
+if __name__ == '__main__':                                                      
+    # Other demo code omitted for clarity
+
+    st.write('### Component Example')
+    # HTML component
+    component_example = load_text('awesome.html')
+    st.components.v1.html(component_example)
+
